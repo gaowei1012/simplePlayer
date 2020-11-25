@@ -15,14 +15,14 @@ const {login} = constant;
  *  没有注册功能
  *  微信登录暂时没有
  */
-const Login = () => {
-    const [username, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+const Login = (props) => {
+    const [phone, setPhone] = useState(null);
+    const [password, setPassword] = useState(null);
 
     useEffect(() => {}, []);
 
     const onChangeNameText = (val) => {
-        setUserName(val);
+        setPhone(val);
     };
 
     const onChangePasswordText = (val) => {
@@ -30,18 +30,23 @@ const Login = () => {
     };
 
     const handleSubmit = () => {
-        console.log(username);
+        console.log(phone);
         console.log(password);
-        const phone = 13666683140;
-        const password = 'qq12345..**';
+        // const phone = 13666683140;
+        // const password = 'qq12345..**';
         const url = `${login}?phone=${phone}&password=${password}`;
         console.log(url);
-        request(url, {})
+        request(url)
             .then((ret) => {
+                console.log('ret===>', ret);
                 if (ret.code === 502) {
-                    Toast.showWaring(ret.message);
+                    Toast.showToast('登录失败');
+                    return;
+                } else if (ret.code === 200) {
+                    NavigationUtil.goBack(props.navigation);
+                    Toast.showToast('登录成功');
+                    return;
                 }
-                console.log(ret);
             })
             .catch((err) => {
                 console.log(err);
@@ -55,12 +60,14 @@ const Login = () => {
                 <TextInput
                     style={styles.textinput}
                     placeholder="请输入用户名"
+                    maxLength={11}
                     onChangeText={(val) => onChangeNameText(val)}
                 />
                 <TextInput
                     style={styles.textinput}
                     placeholder="请输入密码"
                     secureTextEntry={true}
+                    maxLength={18}
                     onChangeText={(val) => onChangePasswordText(val)}
                 />
             </View>

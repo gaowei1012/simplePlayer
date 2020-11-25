@@ -10,7 +10,7 @@ export function request(url, token) {
             headers: {
                 'Content-Type': 'application/json',
                 // eslint-disable-next-line prettier/prettier
-                token: token,
+                // token: token ? {} : '',
             },
             method: 'GET',
         })
