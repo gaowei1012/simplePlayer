@@ -1,14 +1,14 @@
 import React from 'react';
-import {SafeAreaView, Text, StyleSheet, View, FlatList} from 'react-native';
-import {px2dp} from '../../utils/px2dp';
+import {SafeAreaView, Text, View, FlatList} from 'react-native';
 import {connect} from 'react-redux';
 import actions from './redux/action';
 import {lyric} from '../../expand/api';
 import Spinner from '../../components/Spinner';
 import TopNavigationBar from '../../common/TopNavigationBar';
 import {GoBack} from '../../utils/GoBack';
+import styles from '../../styles/lyric';
 
-class Lyric extends React.PureComponent {
+class Lyric extends React.Component {
     state = {
         name: null,
         lyric: null,
@@ -100,21 +100,3 @@ export default connect(
         },
     })
 )(Lyric);
-
-const styles = StyleSheet.create({
-    lyricContainer: {
-        flex: 1,
-    },
-    lyricContentBox: {
-        width: px2dp(345),
-        alignSelf: 'center',
-    },
-    lycBox: {
-        alignItems: 'center',
-        marginVertical: px2dp(3),
-    },
-    lycText: {
-        color: '#333',
-        fontSize: px2dp(14),
-    },
-});

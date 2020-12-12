@@ -104,6 +104,10 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: px2dp(12),
     },
+    image: {
+        width: px2dp(26),
+        height: px2dp(26),
+    },
 });
 
 export default styles;
