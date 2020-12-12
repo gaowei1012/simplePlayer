@@ -6,7 +6,7 @@ import {Image} from 'react-native';
 import {createAppContainer, BottomTabBar, createBottomTabNavigator} from 'react-navigation';
 
 import IndexPage from '../view/Index/IndexPage';
-import PersonalPage from '../view/Personal/PersonalPage';
+import Persoanl from '../view/Personal/Personal';
 // import RecommendPage from '../view/Recommend/RecommendPage'
 import VideoPage from '../view/Video/VideoPage';
 
@@ -59,8 +59,8 @@ const TABS = {
             },
         },
     },
-    PersonalPage: {
-        screen: PersonalPage,
+    Persoanl: {
+        screen: Persoanl,
         navigationOptions: {
             tabBarLabel: '我的',
             tabBarIcon: ({tintColor, focused}) => {
@@ -88,8 +88,8 @@ class DynamicTabNavigator extends Component {
         if (this.Tabs) {
             return this.Tabs;
         }
-        const {IndexPage, VideoPage, PersonalPage} = TABS;
-        const tabs = {IndexPage, VideoPage, PersonalPage};
+        const {IndexPage, VideoPage, Persoanl} = TABS;
+        const tabs = {IndexPage, VideoPage, Persoanl};
         // V2exPage.navigationOptions.tabBarLabel = '最热';
         return (this.Tabs = createBottomTabNavigator(tabs, {
             tabBarComponent: (props) => {
