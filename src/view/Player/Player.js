@@ -144,6 +144,7 @@ class Player extends React.PureComponent {
     }
 
     _player = () => {
+        console.log('this.props.songUrl.item;', this.props);
         const url = this.props.songUrl.item;
         if (!url) {
             return <>{Toast.showToast('加载中')}</>;
@@ -357,7 +358,7 @@ class Player extends React.PureComponent {
         );
         return (
             <SafeAreaView style={styles.container}>
-                {/* {this._player()} */}
+                {this._player()}
                 {topHeader}
                 {playerAndmin}
                 {likeMeunItem}

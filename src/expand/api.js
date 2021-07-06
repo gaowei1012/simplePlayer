@@ -2,7 +2,7 @@
 
 module.exports = {
     // 线下默认地址
-    base_url: 'http://39.99.241.232:7080/',
+    base_url: 'http://39.99.241.232:3000/',
     // 首页
     banner_url: 'banner',
     // 登录 发送手机验证码

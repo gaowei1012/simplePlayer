@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import actions from '../../redux/actions';
 import {flex, center} from '../../styles/constants';
@@ -24,7 +24,6 @@ import {
 import {banner_url, WeatherUrl, topPlaylistHigh, personalizedNewsong} from '../../expand/api';
 import SpinnerLoading from '../../components/Spinner';
 import {Toast} from '../../utils/Toast';
-
 class IndexPage extends React.PureComponent {
     state = {
         daily_data: [],

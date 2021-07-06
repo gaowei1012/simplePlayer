@@ -1,6 +1,6 @@
+/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
 import {StyleSheet, View, Image, Text, SafeAreaView, ScrollView, TouchableOpacity} from 'react-native';
-import {SceneMap, TabView} from 'react-native-tab-view';
 import {connect} from 'react-redux';
 import actions from '../../redux/actions/index';
 import {mvAll, personalizedMv} from '../../expand/api';
@@ -8,11 +8,6 @@ import {px2dp} from '../../utils/px2dp';
 import {screentWidth} from '../../utils/screenUtil';
 import NavigationUtil from '../../utils/NavigationUtil';
 import SpinnerLoading from '../../components/Spinner';
-
-const initRoutres = [
-    {key: 'first', title: 'First'},
-    {key: 'second', title: 'Second'},
-];
 
 class VideoPage extends React.Component {
     constructor(props) {
